@@ -6,7 +6,7 @@ import '../App.css'
 function Header () {
     return (
         <div className="header">
-            This is my header.
+            <p>Welcome to My Book Search!</p>
         </div>
     )
 }
