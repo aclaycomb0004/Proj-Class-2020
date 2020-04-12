@@ -8,6 +8,25 @@
   border-bottom: 5px solid #000;
 }
 
+.Intro {
+  text-align: center;
+  margin: 20px 0px;
+}
+
+.MainCont {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 90%;
+}
+
+.NavButtonStyle {
+  border: 3px solid gray;
+}
+
 
 
 
@@ -17,6 +36,7 @@
 
 
 
-@media screen and (max-width : 300px) {
+@media screen and (max-width : 400px) {
+
 
 }
