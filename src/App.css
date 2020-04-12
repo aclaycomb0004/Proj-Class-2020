@@ -24,7 +24,13 @@
 }
 
 .NavButtonStyle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: 3px solid gray;
+  height: 100px;
+  width: 300px;
+  margin-bottom: 5px;
 }
 
 

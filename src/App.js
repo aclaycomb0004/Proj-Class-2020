@@ -23,9 +23,9 @@ function App() {
 
     <IntroText />
     <div>
-      <NavButton />
-      <NavButton />
-      <NavButton />
+      <NavButton buttonText={"Search by title"} />
+      <NavButton buttonText={"Search by author"}/>
+      <NavButton buttonText={"Search by genre"}/>
     </div>
 
     </div>

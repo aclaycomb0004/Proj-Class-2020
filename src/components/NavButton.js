@@ -1,9 +1,12 @@
 import React from 'react';
 
-function NavButton () {
+function NavButton (props) {
+    
     return (
         <div className="NavButtonStyle">
-            Search by title
+            <div>
+            {props.buttonText}
+            </div>
         </div>
     )
 }
