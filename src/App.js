@@ -22,7 +22,7 @@ function App() {
     <div className="MainCont">
 
     <IntroText />
-    <div>
+    <div className="ButtonCont">
       <NavButton buttonText={"Search by title"} />
       <NavButton buttonText={"Search by author"}/>
       <NavButton buttonText={"Search by genre"}/>

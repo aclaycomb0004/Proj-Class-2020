@@ -23,20 +23,46 @@
     max-width: 90%;
 }
 
+.ButtonCont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
+
 .NavButtonStyle {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 3px solid gray;
+  border: 5px solid #40403f;
+  border-radius: 30px;
   height: 100px;
   width: 300px;
-  margin-bottom: 5px;
+  margin: 0 10px;
 }
 
 
 
+@media screen and (max-width : 990px) {
 
-@media screen and (max-width : 600px) {
+.NavButtonStyle {
+  width: 200px;
+}
+
+
+}
+
+@media screen and (max-width : 800px) {
+
+.ButtonCont {
+  flex-direction: column;
+}
+
+.NavButtonStyle {
+  margin: 10px 0;
+  width: 380px;
+  height: 150px;
+}
 
 }
 
@@ -44,5 +70,9 @@
 
 @media screen and (max-width : 400px) {
 
+.NavButtonStyle {
+  width: 200px;
+  height: 75px;
+}
 
 }
