@@ -3,6 +3,7 @@ import './index.css';
 import './App.css';
 import Header from './components/Header';
 import NavButton from './components/NavButton';
+import Carousel from './components/Carousel';
 
 
 function IntroText() {
@@ -29,7 +30,7 @@ function App() {
     </div>
 
     </div>
-
+      <Carousel />
     </div>
   );
 }
