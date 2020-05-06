@@ -47,10 +47,10 @@ function App() {
         <Search searchType="Title"/>
       </Route>
       <Route exact path="/searchByAuthor">
-        {/* <Home /> */}
+        <Search searchType="Author"/>
       </Route>
       <Route exact path="/searchByGenre">
-        {/* <About /> */}
+        <Search searchType="Genre"/>
       </Route>
     </Switch>
   </div>
