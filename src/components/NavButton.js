@@ -1,24 +1,11 @@
-import React from 'react';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom";
+import React from "react";
 
-function NavButton (props) {
-    
-    return (
-        <div className="NavButtonStyle">
-            <div>
-                <Router>
-                    <Link to={props.path}>
-                        {props.buttonText}
-                    </Link>
-                </Router>
-            </div>
-        </div>
-    )
+function NavButton(props) {
+  return (
+    <div className="NavButtonStyle">
+      <div>{props.buttonText}</div>
+    </div>
+  );
 }
 
 export default NavButton;
