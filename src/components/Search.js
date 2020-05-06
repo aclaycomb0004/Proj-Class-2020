@@ -6,6 +6,11 @@ class Search extends React.Component {
     loaded: false,
     loading: false,
   }
+  componentDidUpdate(prevProps) {
+    if (this.props.searchType !== prevProps.searchType) {
+      this.setState({searchResults: null, searchRequest: ""})
+    }
+  }
   handleChange = (event) => {
     this.setState({searchRequest: event.target.value})
   }
@@ -25,27 +30,29 @@ class Search extends React.Component {
     const ListResults = () => {
       return (
         <div>
-          {this.state.loaded &&
-          <p>
-            There are{" "}
-            {this.state.searchResults && this.state.searchResults.docs.length
-              ? this.state.searchResults.docs.length
-              : 0}{" "}
-            results
-          </p>}
+          {this.state.loaded && (
+            <p>
+              There are{" "}
+              {this.state.searchResults && this.state.searchResults.docs.length
+                ? this.state.searchResults.docs.length
+                : 0}{" "}
+              results
+            </p>
+          )}
           <ul>
             {this.state.searchResults &&
               this.state.searchResults.docs.map((book) => {
-                return <li key={book.key}>
-                <p>{book.title}</p>
-                <p>{book.author_name}</p>
-                </li>
+                return (
+                  <li key={book.key}>
+                    <p>{book.title}</p>
+                    <p>{book.author_name}</p>
+                  </li>
+                )
               })}
           </ul>
         </div>
       )
     }
-    console.log("search page", this.state)
     return (
       <div className="SearchCont">
         <p className="SearchByText">Search by {this.props.searchType}:</p>
@@ -55,15 +62,17 @@ class Search extends React.Component {
             <div className="TextField">
               <input
                 type="text"
-                value={this.state.searchType}
+                value={this.state.searchRequest}
                 onChange={this.handleChange}
                 disabled={this.state.loading}
               />
             </div>
           </label>
-          {!this.state.loading ?
-          <input type="submit" value="Search" />
-          : <p>Loading Results...</p>}
+          {!this.state.loading ? (
+            <input type="submit" value="Search" />
+          ) : (
+            <p>Loading Results...</p>
+          )}
         </form>
         <div>
           <ListResults />
@@ -73,3 +82,4 @@ class Search extends React.Component {
   }
 }
 export default Search
+
