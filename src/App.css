@@ -41,12 +41,27 @@
   margin: 0 10px;
 }
 
-.searchForm {
+/* Search Form */
+
+.SearchCont {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 50px auto;
+}
+
+.SearchByText {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.FormCont {
+  margin-top: 60px;
+}
+
+.TextField {
+  margin: 10px 0;
 }
 
 /* Carousel */

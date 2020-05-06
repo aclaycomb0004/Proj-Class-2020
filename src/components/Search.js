@@ -20,14 +20,16 @@ class Search extends React.Component {
     render() {
         console.log("search page")
         return (
-            <div className="searchForm">
-                <p>Search by {this.props.searchType}</p>
-                <form onSubmit={this.handleSubmit}>
+            <div className="SearchCont">
+                <p className="SearchByText">Search by {this.props.searchType}:</p>
+                <form className="FormCont" onSubmit={this.handleSubmit}>
                     <label>
                     Keyword(s):
-                    <input type="text" value={this.state.searchType} onChange={this.handleChange} />
+                        <div className="TextField">
+                            <input type="text" value={this.state.searchType} onChange={this.handleChange} />
+                        </div>
                     </label>
-                    <input type="submit" value="Submit" />
+                    <input type="submit" value="Search" />
                 </form>
             </div>
         )
