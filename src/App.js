@@ -11,11 +11,11 @@ function IntroText() {
   return (
     <div className="Intro">
       Welcome to My Book Search. Please use this search engine to locate
-      corresponding books based on the title, author, or genre you're looking
+      corresponding books based on the title or author you're looking
       for. This can be an especially useful tool if you're interested in a
-      specific author or genre, and you'd like to find more books to read.
-      Please select the method in which you'd like to search by and fill out the
-      search field on that page.
+      specific author and you'd like to find more books to read.
+      First select the method in which you'd like to search by, fill out the
+      field below, then click "Search" or press enter.
     </div>
   );
 }
@@ -35,9 +35,6 @@ function App() {
             <Link to="/searchByAuthor">
               <NavButton buttonText={"Search by author"} />
             </Link>
-            <Link to="/searchByGenre">
-              <NavButton buttonText={"Search by genre"} />
-            </Link>
           </div>
         </div>
 
@@ -51,9 +48,6 @@ function App() {
             </Route>
             <Route exact path="/searchByAuthor">
               <Search searchType="Author" />
-            </Route>
-            <Route exact path="/searchByGenre">
-              <Search searchType="Genre" />
             </Route>
           </Switch>
         </div>

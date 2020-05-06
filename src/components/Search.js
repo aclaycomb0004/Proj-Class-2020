@@ -1,40 +1,51 @@
-import React from "react";
-
+import React from "react"
 class Search extends React.Component {
   state = {
     searchRequest: "",
-    searchResults: [],
-  };
+    searchResults: null,
+    loaded: false,
+    loading: false,
+  }
   handleChange = (event) => {
-    this.setState({ searchRequest: event.target.value });
-  };
-
+    this.setState({searchRequest: event.target.value})
+  }
   handleSubmit = (event) => {
-    event.preventDefault();
-    this.fetchBooks();
-  };
-
+    event.preventDefault()
+    this.setState({searchResults: null, loading: true, loaded: false})
+    this.fetchBooks()
+  }
   fetchBooks = async () => {
-    let keywords = this.state.searchRequest.split(" ").join("+");
-    const url = `http://openlibrary.org/search.json?title=${keywords}`;
-    const res = await fetch(url);
-    const books = await res.json();
-    this.setState({ searchResults: books });
-    console.log(books);
-  };
-
+    let keywords = this.state.searchRequest.split(" ").join("+")
+    const url = `http://openlibrary.org/search.json?${this.props.searchType.toLowerCase()}=${keywords}`
+    const res = await fetch(url)
+    const books = await res.json()
+    this.setState({searchResults: books, loaded: true, loading: false})
+  }
   render() {
     const ListResults = () => {
       return (
-        <ul>
-          {this.state.searchResults.length &&
-            this.state.searchResults.docs.map((book) => {
-              return <li>{book.title}</li>;
-            })}
-        </ul>
-      );
-    };
-    console.log("search page", this.state);
+        <div>
+          {this.state.loaded &&
+          <p>
+            There are{" "}
+            {this.state.searchResults && this.state.searchResults.docs.length
+              ? this.state.searchResults.docs.length
+              : 0}{" "}
+            results
+          </p>}
+          <ul>
+            {this.state.searchResults &&
+              this.state.searchResults.docs.map((book) => {
+                return <li key={book.key}>
+                <p>{book.title}</p>
+                <p>{book.author_name}</p>
+                </li>
+              })}
+          </ul>
+        </div>
+      )
+    }
+    console.log("search page", this.state)
     return (
       <div className="SearchCont">
         <p className="SearchByText">Search by {this.props.searchType}:</p>
@@ -46,17 +57,19 @@ class Search extends React.Component {
                 type="text"
                 value={this.state.searchType}
                 onChange={this.handleChange}
+                disabled={this.state.loading}
               />
             </div>
           </label>
+          {!this.state.loading ?
           <input type="submit" value="Search" />
+          : <p>Loading Results...</p>}
         </form>
         <div>
           <ListResults />
         </div>
       </div>
-    );
+    )
   }
 }
-
-export default Search;
+export default Search
