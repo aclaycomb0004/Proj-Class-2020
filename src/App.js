@@ -40,16 +40,16 @@ function App() {
   <Router>
   <div>
     <Switch>
-      <Route path="/">
+      <Route exact path="/">
       <BookCarousel />
       </Route>
-      <Route path="/searchByTitle">
-        <Search />
+      <Route exact path="/searchByTitle">
+        <Search searchType="Title"/>
       </Route>
-      <Route path="/searchByAuthor">
+      <Route exact path="/searchByAuthor">
         {/* <Home /> */}
       </Route>
-      <Route path="/searchByGenre">
+      <Route exact path="/searchByGenre">
         {/* <About /> */}
       </Route>
     </Switch>

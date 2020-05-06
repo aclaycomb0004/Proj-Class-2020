@@ -18,9 +18,10 @@ class Search extends React.Component {
         event.preventDefault();
       }
     render() {
+        console.log("search page")
         return (
             <div>
-                <p>This is my search component.</p>
+                <p>Search by {this.props.searchType}</p>
                 <form onSubmit={this.handleSubmit}>
                     <label>
                     Name:
