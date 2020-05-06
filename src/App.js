@@ -24,7 +24,9 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
+          <Link to="/">
+            <Header />
+          </Link>
 
         <div className="MainCont">
           <IntroText />

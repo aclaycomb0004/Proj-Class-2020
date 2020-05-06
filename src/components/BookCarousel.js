@@ -4,10 +4,19 @@ import { Carousel } from 'react-responsive-carousel';
 
 
 class BookCarousel extends React.Component {
-
-  // src={require("./images/slide-1.png")}
-
+  state = {fetchResults: null}
+  componentDidMount() {
+    this.fetchNYT();
+}
+fetchNYT = async () => {
+  const url = "https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=fpnTOSJ6F3L9K84O6rAe6HPoya5eevbT"
+  const res = await fetch(url)
+  const bestSellers = await res.json()
+  this.setState({fetchResults: bestSellers})
+  console.log("bestSellers", bestSellers)
+}
   render() {
+    console.log("Alyssa", this.state)
     return (
       <div className="MainCarousel">
       <Carousel>
