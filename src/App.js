@@ -4,6 +4,12 @@ import './App.css';
 import Header from './components/Header';
 import NavButton from './components/NavButton';
 import BookCarousel from './components/BookCarousel';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 
 function IntroText() {
@@ -24,14 +30,31 @@ function App() {
 
     <IntroText />
     <div className="ButtonCont">
-      <NavButton buttonText={"Search by title"} />
-      <NavButton buttonText={"Search by author"}/>
-      <NavButton buttonText={"Search by genre"}/>
+      <NavButton buttonText={"Search by title"} path="/searchByTitle"/>
+      <NavButton buttonText={"Search by author"} path="/searchByAuthor"/>
+      <NavButton buttonText={"Search by genre"} path="/searchByGenre"/>
     </div>
 
     </div>
+  <Router>
+  <div>
+    <Switch>
+      <Route path="/">
       <BookCarousel />
-    </div>
+      </Route>
+      <Route path="/searchByTitle">
+        {/* <Users /> */}
+      </Route>
+      <Route path="/searchByAuthor">
+        {/* <Home /> */}
+      </Route>
+      <Route path="/searchByGenre">
+        {/* <About /> */}
+      </Route>
+    </Switch>
+  </div>
+</Router>
+</div>
   );
 }
 
