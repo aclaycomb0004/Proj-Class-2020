@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/Header';
 import NavButton from './components/NavButton';
 import BookCarousel from './components/BookCarousel';
+import Search from './components/Search';
 import {
   BrowserRouter as Router,
   Switch,
@@ -43,7 +44,7 @@ function App() {
       <BookCarousel />
       </Route>
       <Route path="/searchByTitle">
-        {/* <Users /> */}
+        <Search />
       </Route>
       <Route path="/searchByAuthor">
         {/* <Home /> */}
