@@ -1,31 +1,31 @@
-import React from "react"
+import React from "react";
 class Search extends React.Component {
   state = {
     searchRequest: "",
     searchResults: null,
     loaded: false,
     loading: false,
-  }
+  };
   componentDidUpdate(prevProps) {
     if (this.props.searchType !== prevProps.searchType) {
-      this.setState({searchResults: null, searchRequest: ""})
+      this.setState({ searchResults: null, searchRequest: "", loaded: false });
     }
   }
   handleChange = (event) => {
-    this.setState({searchRequest: event.target.value})
-  }
+    this.setState({ searchRequest: event.target.value });
+  };
   handleSubmit = (event) => {
-    event.preventDefault()
-    this.setState({searchResults: null, loading: true, loaded: false})
-    this.fetchBooks()
-  }
+    event.preventDefault();
+    this.setState({ searchResults: null, loading: true, loaded: false });
+    this.fetchBooks();
+  };
   fetchBooks = async () => {
-    let keywords = this.state.searchRequest.split(" ").join("+")
-    const url = `http://openlibrary.org/search.json?${this.props.searchType.toLowerCase()}=${keywords}`
-    const res = await fetch(url)
-    const books = await res.json()
-    this.setState({searchResults: books, loaded: true, loading: false})
-  }
+    let keywords = this.state.searchRequest.split(" ").join("+");
+    const url = `http://openlibrary.org/search.json?${this.props.searchType.toLowerCase()}=${keywords}`;
+    const res = await fetch(url);
+    const books = await res.json();
+    this.setState({ searchResults: books, loaded: true, loading: false });
+  };
   render() {
     const ListResults = () => {
       return (
@@ -47,12 +47,12 @@ class Search extends React.Component {
                     <p>{book.title}</p>
                     <p>{book.author_name}</p>
                   </li>
-                )
+                );
               })}
           </ul>
         </div>
-      )
-    }
+      );
+    };
     return (
       <div className="SearchCont">
         <p className="SearchByText">Search by {this.props.searchType}:</p>
@@ -78,8 +78,7 @@ class Search extends React.Component {
           <ListResults />
         </div>
       </div>
-    )
+    );
   }
 }
-export default Search
-
+export default Search;

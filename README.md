@@ -2,19 +2,23 @@
 
 # Project Summary
 
-> My project will allow the user to search for books in *open library search API* based on author, title, and genre. Search results will display a thumbnail of the book cover (when available), the author, and a link that takes you to where you can checkout the book.
+> My project will allow the user to search for books in *open library search API* based on author or title. Search results will display the title and author.
+
+> There will be two buttons on the home screen that read "Search by title" and "Search by author". When clicked, a search field will appear below in which you can type your respective search criteria. The url route will also change once one of these buttons is clicked.
+
+> There will be a carousel on the home page from the New York Times Best Seller API that displays a thumbnail of the book, its rank, the title, and the author, as well as a link to where you can purchase the book.
 
 
 # Technical Summary
 
-> I'll be using Create React App (React/JS), the open library search API, Postman API query tool, and the New York Times Best Seller API.
+> I'll be using Create React App with React Router Dom (React/JS), the open library search API, and the New York Times Best Seller API.
 
 
 # Features
 
-1. Users will be able to input a search parameter for a book based on author, title, or book genre.
+1. Users will be able to input a search parameter for a book based on author or title.
 
-2. There will be buttons on the home page to select the way the user will search for a book (i.e, Search by Title, Search by Author, Search by Genre).
+2. There will be buttons on the home page to select the way the user will search for a book (i.e, Search by Title, Search by Author).
 
 3. There will be a carousel on the home page that displays various top selling books rated by the New York Times.
 
@@ -32,11 +36,13 @@
 
 # Requirements to run project
 
-1. Clone repo and cd into directory
+1. Clone repo
 
-2. Run npm install
+2. Cd into directory
 
-3. Run npm start and go to `http://localhost:3000/`
+3. Run npm install
+
+4. Run npm start and go to `http://localhost:3000/`
 
 
 

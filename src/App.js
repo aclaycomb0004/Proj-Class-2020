@@ -43,7 +43,9 @@ function App() {
         <div>
           <Switch>
             <Route exact path="/">
+              <div className="BookCarousel">
               <BookCarousel />
+              </div>
             </Route>
             <Route exact path="/searchByTitle">
               <Search searchType="Title" />

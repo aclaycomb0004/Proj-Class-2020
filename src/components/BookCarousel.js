@@ -8,7 +8,7 @@ const CarouselItem = (props) => {
       <p className="legend">
         Rank # {props.rank}, {props.title}, by: {props.author}{" "}
       </p>
-      <p>
+      <p className="BuyHere">
         <a href={props.buy_links} target="_blank" rel="noopener noreferrer">
           Buy here
         </a>
@@ -30,12 +30,15 @@ class BookCarousel extends React.Component {
   }
   render() {
     return (
-      <div className="MainCarousel">
-        <div>
-          NYT Best sellers list, Top{" "}
+      <div className="MainCarouselContainer">
+        <div className="TopCarouselText">
+          <p>NYT Best sellers list</p>
+          <p className="Top15">Top{" "}
           {this.state.fetchResults &&
             this.state.fetchResults.results.books.length}
+            </p>
         </div>
+        <div className="Carousel">
         <Carousel>
           {this.state.fetchResults &&
             this.state.fetchResults.results &&
@@ -52,6 +55,7 @@ class BookCarousel extends React.Component {
               )
             })}
         </Carousel>
+        </div>
       </div>
     )
   }
