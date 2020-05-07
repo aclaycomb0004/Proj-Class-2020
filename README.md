@@ -8,10 +8,12 @@
 
 > There will be a carousel on the home page from the New York Times Best Seller API that displays a thumbnail of the book, its rank, the title, and the author, as well as a link to where you can purchase the book.
 
+> There will be a "Useless Fact", fetched from Random Useless Facts API, at the bottom of the page that loads a different useless fact every time the page loads.
+
 
 # Technical Summary
 
-> I'll be using Create React App with React Router Dom (React/JS), the open library search API, and the New York Times Best Seller API.
+> I'll be using Create React App with React Router Dom (React/JS), the open library search API, the New York Times Best Seller API, and the Random Useless Fact API.
 
 
 # Features
@@ -21,6 +23,8 @@
 2. There will be buttons on the home page to select the way the user will search for a book (i.e, Search by Title, Search by Author).
 
 3. There will be a carousel on the home page that displays various top selling books rated by the New York Times.
+
+4. There will be a random useless fact generated at the bottom of the page every time the page loads.
 
 
 # Milestones

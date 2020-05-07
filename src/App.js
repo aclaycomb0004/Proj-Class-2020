@@ -6,6 +6,7 @@ import NavButton from "./components/NavButton";
 import BookCarousel from "./components/BookCarousel";
 import Search from "./components/Search";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import UselessFacts from "./components/UselessFacts";
 
 function IntroText() {
   return (
@@ -55,6 +56,7 @@ function App() {
             </Route>
           </Switch>
         </div>
+        <UselessFacts />
       </div>
     </Router>
   );
